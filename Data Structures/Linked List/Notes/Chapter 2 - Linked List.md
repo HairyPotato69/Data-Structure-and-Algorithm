@@ -206,8 +206,8 @@ bool LinkedList::set(const int index, const int value){
 # Variations
 
 There are different types of linked list:
-1. [[Chapter 3 - Queue and Stack|Queue]]
-2. [[Chapter 3 - Queue and Stack|Stack]]
+1. [Queue](../Notes/Chapter%203%20-%20Queue%20and%20Stack.md)
+2. [Stack](../Notes/Chapter%203%20-%20Queue%20and%20Stack.md)
 3. Doubly linked list
 	- Largely similar with singly linked list.
 2. Circular linked list (both singly and doubly)
