@@ -1,19 +1,6 @@
----
-aliases:
-  - Dynamic Array
-tags:
-  - Notes
-  - Array
-  - Dynamic
-  - DSA
-Date Completed: 2023-09-18
-Completion: true
-obsidianUIMode: preview
----
->[!WARNING] See pointers first
->[[Pointer]]
 # Array definition
 Arrays created in C++ can only hold values of the same datatype. 
+
 ```cpp
 int main(){
 	// array that can only hold integer datatype is created
@@ -25,6 +12,7 @@ int main(){
 ```
 
 Arrays are contiguous. This means that the values are next to each other.
+![Contiguous](../Diagram/Array/Contiguous.md)
 ![[Contiguous|750]]
 When you create an array, a pointer will be created that points to the first value in the array. The variable name of the array is the pointer that points to the first value. Because the name isn't a modifiable lvalue (*See* [[Compound Data Types#Lvalues|Lvalues]]), it is not possible to change the variable name to point to another location. However, you can actually assign a pointer variable to the array.
 
