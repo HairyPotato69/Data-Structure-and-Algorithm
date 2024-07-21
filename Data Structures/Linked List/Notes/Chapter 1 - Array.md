@@ -148,4 +148,5 @@ int main(){
 	return 0;
 }
 ```
-If the list is small, this is a viable way of reallocating memory. However, if the list gets too big, this method is slow and memory-inefficient. This issue can be solved with dynamic array such as `std::vector` or [linked list](Chapter%2%-%Linked%List.md)
+If the list is small, this is a viable way of reallocating memory. However, if the list gets too big, this method is slow and memory-inefficient. This issue can be solved with dynamic array such as `std::vector` or [linked list](Chapter 2 - Linked List.md
+)
