@@ -61,6 +61,7 @@ A 2D array is an array that stores arrays as its element. A conventional thought
 | 2          | 6   | 8   | 5   | 9   |
 | 3          | 1   | 2   | 3   | 4   |
 | 4          | 9   | 8   | 7   | 2   |
+
 According to the table above, the 2D array contains 5 rows and 4 columns. 
 
 Assessing the values in a specific row and column requires two indices. `arr[0][1]`. The first index indicates the row while the second index indicates the column. `arr[0][1]` would return 1.

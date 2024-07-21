@@ -1,9 +1,12 @@
 # Linked List definition
 Linked list allows values to be connected to one another without being contiguous - values can exist in different location in the memory grid. 
-![[Memory grid]]
-Generally, linked list are presented as such, 
-![[Linked list|Linked list]]
+![Memory grid](../Diagram/Normal%20linked%20list/Memory%20grid.png)
+
+Generally, linked list are presented as such, \
+![Linked List](../Diagram/Normal%20linked%20list/Linked%20list.png)
+
 A linked list will have a head pointer that points to the first value in the linked list. A tail pointer that points to the final value in the linked list *may* be included. 
+
 ## Creation
 The elements in a linked list is referred to as **Nodes**.
 
