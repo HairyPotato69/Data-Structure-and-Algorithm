@@ -110,12 +110,16 @@ The time complexity of both functions combined is $O(n \; log \; n)$. The for lo
 
 $\frac{n}{4}$ nodes with level 1, $n/8$ with level 0,..., 1 node at $log\; n$ level. 
 
-The total amount of work in the for loop can be summarised as $$\frac{n}{4}(1\times c)\;+\;\frac{n}{8}(2\times c)\;+\;\frac{n}{4}(3\times c)\;+...+\; 1(log \; n\; c)$$
+The total amount of work in the for loop can be summarised as 
+
+$$\frac{n}{4}(1\times c)\;+\;\frac{n}{8}(2\times c)\;+\;\frac{n}{4}(3\times c)\;+...+\; 1(log \; n\; c)$$
 
 $\text{let} \frac{n}{4} = 2^k$
 $$2^k(1\times c)\;+\;2^{k-1}(2\times c)\;+\;2^{k-2}(3\times c)\;+...+\; 2^{0}(log \; n\; c)$$
 $$2^k c (1+\;\frac{2}{2}\;+\;\frac{3}{2}\;+...+\; \frac{(k+1)}{2^k})$$
+
 This is a convergent series and is bounded by a constant. It doesn't matter if k is small or large. So, finally
+
 $$2^kc(c)$$
 $$2^k$$
 $$\frac{n}{4}$$
