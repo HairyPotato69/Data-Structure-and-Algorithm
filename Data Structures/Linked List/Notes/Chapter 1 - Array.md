@@ -12,9 +12,10 @@ int main(){
 ```
 
 Arrays are contiguous. This means that the values are next to each other.
-![Contiguous](../Diagram/Array/Contiguous.md)
-![[Contiguous|750]]
-When you create an array, a pointer will be created that points to the first value in the array. The variable name of the array is the pointer that points to the first value. Because the name isn't a modifiable lvalue (*See* [[Compound Data Types#Lvalues|Lvalues]]), it is not possible to change the variable name to point to another location. However, you can actually assign a pointer variable to the array.
+
+![Contiguous](../Diagram/Array/Contiguous.png)
+
+When you create an array, a pointer will be created that points to the first value in the array. The variable name of the array is the pointer that points to the first value. Because the name isn't a modifiable lvalue, it is not possible to change the variable name to point to another location. However, you can actually assign a pointer variable to the array.
 
 *Snippet*
 ```cpp
@@ -147,4 +148,4 @@ int main(){
 	return 0;
 }
 ```
-If the list is small, this is a viable way of reallocating memory. However, if the list gets too big, this method is slow and memory-inefficient. This issue can be solved with dynamic array such as `std::vector` or [[Chapter 2 - Linked List|Linked List]]
+If the list is small, this is a viable way of reallocating memory. However, if the list gets too big, this method is slow and memory-inefficient. This issue can be solved with dynamic array such as `std::vector` or [linked list](Chapter%2%-%Linked%List.md)
