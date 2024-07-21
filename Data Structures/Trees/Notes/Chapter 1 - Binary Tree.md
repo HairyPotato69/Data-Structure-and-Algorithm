@@ -1,24 +1,17 @@
----
-aliases:
-  - BT
-tags:
-  - Notes
-  - Tree
-  - DSA
-Date Completed: 2023-09-18
-Completion: true
-obsidianUIMode: preview
----
->[!WARNING] See these first
->[[Chapter 2 - Linked List]]
->[[Recursion]] 
-# Tree Definition
+>[!WARNING]
+>[Linked List](../../Linked%20List/Notes/Chapter%202%20-%20Linked%20List.md)
+>[Recursion](../../../Algorithm/Recursion/Notes/Recursion.md)
+
+# Tree NOTE
+
 A tree is a data structure that is used to store data in a hierarchical manner. Tree connects nodes via edges. Each tree consists of roots, branches and leaves that are connected with edges. The top most node is known as the **root** and other nodes beneath the root is known as **child**. Each node can have multiple children and each children can have their own children. 
 
 Tree data structure is a non-linear data structure as each node is not stored sequentially but rather arranged on multiple levels.
 
-![[Binary Tree|500]]
+![Binary Tree](../../Linked%20List/Diagram/Trees/Binary%20Tree.png)
+
 **Terminologies**
+
 - Parent Node
 	- The node that is the predecessor of another node
 	- B is a parent node of C and D
@@ -30,15 +23,19 @@ Tree data structure is a non-linear data structure as each node is not stored se
 	- C E F H I J are all leaf nodes
 
 Each Tree consists of one or more subtrees. 
+
 There are different types of tree:
 1. Binary Tree
 2. Ternary Tree
 3. Generic Tree
+
 There are also different types of Tree data structure
 1. [[Binary Tree]]
 2. [[Chapter 2 - Binary Search Tree|BST]]
 3. [[Chapter 4 - Adelson-Velsky and Landis Tree|AVL Tree]]
+
 This chapter will focus on **Binary Tree**
+
 ## Creation
 
 The Node in Binary Tree is similar to the ones used in Linked List but with a few additions.
@@ -60,9 +57,7 @@ BTNode::BTNode(int val, BTNode* left = nullptr, BTNode* right = nullptr)
 	{}
 ```
 
-^29dc32
-
-![[Data Structure and Algorithm/Data Structures/Linked List/Diagram/Trees/Node|500]]
+![Node](../../Linked%20List/Diagram/Trees/Node.png)
 
 ```cpp
 class BT{
@@ -82,10 +77,13 @@ class BT{
 		void deleteDeepest(BTNode*& root, BTNode*& node);
 };
 ```
+
 *Explanation*
+
 Most operations in any tree is done through recursion rather than iteratively. Each function is just modified version of the basic traversal function. 
 
 *Snippet: Tree traversal*
+
 ```cpp
 void TT(BTNode* root){
 	if (!root) return;
@@ -97,21 +95,26 @@ void TT(BTNode* root){
 }
 ```
 
-^26c09b
-
 Before we can go on to explain each tree operation, we have to first understand how traversal works in a tree. 
-Traversal in a tree can be done in 3 ways: ^504088
+
+Traversal in a tree can be done in 3 ways:
 1. Pre-order
 	1. Any operation is conducted in the first visit
 2. In-order
 	1. Any operation is conducted in the second visit
 3. Post-order
 	1. Any operation is conducted in the third visit
+
 As there are 3 ways of traversal, each solution is based on any of these three. Before any solution is constructed, the type of traversal has to be determined first. 
+
 ### Pre-order
-![[Tree example|750]]
+
+![Tree](../../Linked%20List/Diagram/Trees/Tree%20example.png)
+
 As it has been established, in pre-order traversal, any operation is carried out in the first visit. For instance:
+
 *Snippet: Pre-order Traversal*
+
 ```cpp
 void TT(BTNode* root){
 	if (!root) return;
@@ -120,13 +123,19 @@ void TT(BTNode* root){
 	TT(root->right);
 }
 ```
+
 Based on the snippet, the value of the nodes will be printed in the first visit. 
+
 *H E B A C D F G L J I K M* 
 
 ### In-Order
-![[Tree example|750]]
+
+![Tree](../../Linked%20List/Diagram/Trees/Tree%20example.png)
+
 In In-order traversal, any operation is carried out in the second visit. For instance:
+
 *Snippet: In-order Traversal*
+
 ```cpp
 void TT(BTNode* root){
 	if (!root) return;
@@ -135,12 +144,19 @@ void TT(BTNode* root){
 	TT(root->right);
 }
 ```
+
 Based on the snippet, the value of the nodes will be printed in the second visit.
+
 *A B C D E F G H I J K L M*
+
 ### Post-Order
-![[Tree example|750]]
+
+![Tree](../../Linked%20List/Diagram/Trees/Tree%20example.png)
+
 In Post-order traversal, any operation is carried out in the third visit
+
 *Snippet: Post-order Traversal*
+
 ```cpp
 void TT(BTNode* root){
 	if (!root) return;
@@ -149,13 +165,16 @@ void TT(BTNode* root){
 	std::cout << root->value;
 }
 ```
+
 Based on the snippet, the value of each node will be printed in the third visit. 
+
 *A D C B G F E I K J M L H*
 
 # Operations
 
 ## `int get_size()`
->[!DEFINITION] Function
+
+>[!NOTE]
 > Returns the number of nodes in the tree
 
 ```cpp
@@ -165,11 +184,13 @@ int BT::get_size() const{
 ```
 
 ## `bool insert(const int val)` and `void insert2(const BTNode*& root, BTNode*& node)`
->[!DEFINITION] Function
+
+>[!NOTE]
 >Insert operation requires two functions. The first function is to create a node and the second function is to iterate through the existing tree.
 >The insert function works by specifying the parent node to insert
 
 `bool insert(const int val)`
+
 ```cpp
 bool BT::insert(const int father, const int val){
 	BTNode* new_node {new BTNode(val)};
@@ -189,6 +210,7 @@ bool BT::insert(const int father, const int val){
 ```
 
 `bool insert2(const BTNode*& root, BTNode*& node)`
+
 ```cpp
 bool BT::insert2(const BTNode*& root, const int father, BTNode*& node){
 	# cannot find the father
@@ -209,9 +231,9 @@ bool BT::insert2(const BTNode*& root, const int father, BTNode*& node){
 }
 ```
 
-
 ## `int height(const BtNode*& root)`
->[!DEFINITION] Function
+
+>[!NOTE]
 >Returns the height of the tree which is calculated based on the deepest node in the tree. $height \neq size$ 
 
 ```cpp
@@ -222,10 +244,12 @@ int BT::height(const BTNode*& root) const{
 	return (left > right) ? left + 1 : right + 1;
 }
 ```
+
 *Modify this to see if the tree is balanced.*
 
 ## `bool remove(const int val)` and `void findDeepest(BTNode*& root)` and `void deleteDeepest(BTNode*& root, BTNode*& node)`
->[!DEFINITION] Function
+
+>[!NOTE]
 >Consists of 3 parts
 >1. Finds the node to be deleted
 >2. Finds the deepest node in the Tree
@@ -310,15 +334,17 @@ void deleteDeepest(BTNode*& root, BTNode*& deleteNode){
 	}
 }
 ```
+
 # Searching
+
 Searching algorithm in Trees can be divided into either Depth First Search, DFS, or Breadth First Search, BFS. ^d75fcf
 
 Depth First Search, in terms of trees, is the standard tree traversal algorithm. 
-![[Chapter 1 - Binary Tree#^26c09b]]
 
 However, in Breadth First Search, a level is explored before moving down to the next level. There are different ways to produce BFS but the standard way will be shown here.
 
-*Snippet: BFS* ^c0bec5
+*Snippet: BFS* 
+
 ```cpp
 bool BFS(BTNode* root){
 	if(!root) return 0;
@@ -334,10 +360,15 @@ bool BFS(BTNode* root){
 	return 1;
 }
 ```
+
 # See next
-[[Chapter 2 - Binary Search Tree]]
+
+[Binary Search Tree](../Notes/Chapter%202%20-%20Binary%20Search%20Tree.md)
+
 # Extra
+
 ## Balanced Tree Check
+
 ```cpp
 int height(BTNode* root, bool& isBalanced){
 	if(!root) return 0;
@@ -348,7 +379,9 @@ int height(BTNode* root, bool& isBalanced){
 	return max(left+1, right+1);
 }
 ```
+
 ## BFS with height
+
 ```cpp
 void BFS(BTNode* root, int level){
 	if (!root) return;
@@ -359,7 +392,9 @@ void BFS(BTNode* root, int level){
 	}
 }
 ```
+
 ## Display all possible paths
+
 ```cpp
 void paths(BTNode* root, vector<int>& path, vector<std::string>& solution){
 	if(!root) return;
@@ -380,6 +415,7 @@ void paths(BTNode* root, vector<int>& path, vector<std::string>& solution){
 	path.pop_back();
 }
 ```
+
 ```cpp
 void paths2(BTNode* root, int path[], int length){
 	if (!root) return;

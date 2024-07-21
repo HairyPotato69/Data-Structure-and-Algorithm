@@ -1,35 +1,22 @@
----
-aliases:
-  - BST
-tags:
-  - Notes
-  - Tree
-  - Binary-Search-Tree
-  - DSA
-Date Completed: 2023-09-18
-Completion: true
-obsidianUIMode: preview
----
->[!WARNING] See first
->[[Chapter 1 - Binary Tree]]
->[[Recursion]]
-- [!] This chapter assumes that binary tree has been covered.
+>[!WARNING]
+>[Binary Tree](../Notes/Chapter%201%20-%20Binary%20Tree.md)
+>[Recursion](../../../Algorithm/Recursion/Notes/Recursion.md)
+>This chapter assumes that binary tree has been covered.
 
-# Definition
+# NOTE
+
 Binary Search Tree, BST, is a type of [[Chapter 1 - Binary Tree|Binary Tree]] in which the value of the left node is always lesser than the value of the right node. This is known as the LCR rule. By enforcing this rule, the efficiency of deletion, insertion, and searching algorithm will be increased.
 
 ## Properties of BST:
+
 1. The left subtree of a node contains only nodes with values lesser than the node's value.
 2. The right subtree of a node contains only nodes with values larger than the node's value.
 3. Any duplicate values will be stored on the left side of the subtree. 
 
-- [!] See [[Chapter 1 - Binary Tree|Binary Tree]] before continuing
-
 # Creation 
-## Node
-![[Chapter 1 - Binary Tree#^29dc32]]
-![[Data Structure and Algorithm/Data Structures/Linked List/Diagram/Trees/Node|Node]]
+
 ## Binary Search Tree
+
 ```c++
 class BST{
 	private:
@@ -48,9 +35,13 @@ class BST{
 		bool case3(BSTNode*& cur);
 }
 ```
+
 # Operation
+
 Each of the operations that can be on a BST follow this format:
+
 *Snippet A: Basic format*
+
 ```cpp
 bool BSTT(BSTNode*& root, const int key){
 	if (!root) return 0;
@@ -63,7 +54,7 @@ bool BSTT(BSTNode*& root, const int key){
 
 ## `int get_size()`
 
->[!DEFINITION] get_size()
+>[!NOTE]
 >Returns the number of nodes in the tree
 
 ```cpp
@@ -74,10 +65,11 @@ int BT::get_size() const{
 
 ## `bool insert2(BSTNode* root, BSTNode* new_node)` and `bool insert(const int value)`
 
->[!DEFINITION] Function
+>[!NOTE]
 >Insert operation requires two functions. The first function is to create a node and the second function is to iterate through the existing tree. The insert function works by specifying the parent node to insert.
 
 ### `bool insert(const int value)`
+
 ```cpp
 bool BST::insert(const int value){
 	BSTNode* new_node { new BSTNode(type) };
@@ -87,7 +79,9 @@ bool BST::insert(const int value){
 	return 1;
 }
 ```
+
 ### `bool insert2(BSTNode* root, BSTNode* new_node)`
+
 ```cpp
 bool BST::insert2(BSTNode* root, BSTNode* new_node){
 	// is the current
@@ -97,20 +91,25 @@ bool BST::insert2(BSTNode* root, BSTNode* new_node){
 		(!root->right) ? root->right = new_node : insert(root->right, new_node);
 }
 ```
+
 ## `bool remove(BSTNode* pre, BSTNode* cur, const int value)` and `bool remove(const int value)` and `bool case2(BSTNode* pre, BSTNode* cur)` and `bool case3(BSTNode* cur)`
 
->[!DEFINITION] Function
+>[!NOTE]
 >Checks 3 cases
 >1. Both sides of the target node is null
 >2. Either one side of the target node is null
 >3. Both sides of the target node is not null
+
 ### `bool remove(const int value)`
+
 ```cpp
 bool BST::remove(const int value){
 	return (!m_root) ? 0 : remove2(m_root, m_root, value); 
 }
 ```
+
 ### `bool remove(BSTNode* pre, BSTNode* cur, const int value)`
+
 ```cpp
 bool BST::remove2(BSTNode*& pre, BSTNode*& cur, const int value){
 	if (!cur) return 0;
@@ -120,7 +119,9 @@ bool BST::remove2(BSTNode*& pre, BSTNode*& cur, const int value){
 	return (cur->value > value) ? remove(cur, cur->left, value) : remove(cur, cur->right,value);
 }
 ```
+
 ### `bool case2(BSTNode* pre, BSTNode* cur)`
+
 ```cpp
 bool BST::case2(BSTNode*& pre, BSTNode*& cur){
 	// root node
@@ -154,7 +155,9 @@ bool BST::case2(BSTNode*& pre, BSTNode*& cur){
 	return 1;
 }
 ```
+
 ### `bool case3(BSTNode* cur)`
+
 ```cpp
 bool BST::case3(BSTNode*& cur){
 	BTNode* is{ nullptr };
@@ -176,11 +179,17 @@ bool BST::case3(BSTNode*& cur){
 	return 1;
 }
 ```
+
 # So, why?
-The issue with the normal binary tree is how easy it is to be out of balance. 
-![[Tree or linked list]]
+
+The issue with the normal binary tree is how easy it is to be out of balance.
+
+![Tree or Linked List](../Diagram/Tree%20or%20linked%20list.png)
+
 Although this is still possible in Binary Search Tree, it only happens when the values inserted are all smaller or larger than the prior values. 
+
 ## Application
+
 1. Searching
 	- Binary Search uses this concept to look for a value in a sorted list.
 2. Sorting
@@ -189,11 +198,18 @@ Although this is still possible in Binary Search Tree, it only happens when the 
 4. Data Storage
 5. Databases
 6. AI
+
 ## Advantages and Disadvantages
+
 ### Advantages
+
 The time complexity when searching in a BST is $O(log\; n)$. The structure in a BST is also structured, easing the process of finding previous and next values.
+
 ### Disadvantages
+
 In the worst-case scenario, the time complexity is a linear time complexity, $O(5)$. There aren't a lot of operations supported by a BST.
+
 # See next
-[[Chapter 4 - Adelson-Velsky and Landis Tree|AVL Tree]]
-[[Chapter 3 - Heap, Priority Queue and Complete Binary Tree|Heap, Priority Queue and Complete Binary Tree]]
+
+[AVL Tree](../Notes/Chapter%204%20-%20Adelson-Velsky%20and%20Landis%20Tree.md)
+[Heap, Priority Queue and Complete Binary Tree|Heap, Priority Queue and Complete Binary Tree](../Notes/Chapter%203%20-%20Heap,%20Priority%20Queue%20and%20Complete%20Binary%20Tree.md)

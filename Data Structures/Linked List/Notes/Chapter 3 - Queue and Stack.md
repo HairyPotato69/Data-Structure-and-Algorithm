@@ -1,5 +1,5 @@
 >[!WARNING]
->[Chapter 2 - Linked List|Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
+>[Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
 
 # Queue
 
@@ -24,7 +24,7 @@ A graphical representative of a queue is as shown above. A queue may also have a
 
 The node is the same one in linked list:
 
-![Chapter 2 - Linked List#^0a18b7|Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
+![Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
 
 And
 
@@ -162,7 +162,7 @@ In terms of linked list, a stack looks just like a queue or an ordinary linked l
 
 The node is the same one in linked list:
 
-![Chapter 2 - Linked List#^0a18b7|Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
+![Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
 
 And
 
