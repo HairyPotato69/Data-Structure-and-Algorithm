@@ -1,0 +1,23 @@
+{
+  "minimal-style@@ax1@@dark": "#FFFFFF",
+  "minimal-style@@ax2@@dark": "#000000",
+  "minimal-style@@callouts-style": "callouts-outlined",
+  "minimal-style@@embed-hide-title": true,
+  "minimal-style@@graph-node-attachment@@dark": "#FFFFFF",
+  "minimal-style@@h1-l": true,
+  "minimal-style@@pdf-page-style": "pdf-shadows-on",
+  "minimal-style@@progress-complete@@dark": "#FFFFFF",
+  "minimal-style@@minimal-strike-lists": true,
+  "minimal-style@@metadata-icons-off": true,
+  "minimal-style@@metadata-dividers": true,
+  "minimal-style@@sidebar-tabs-style": "sidebar-tabs-square",
+  "minimal-style@@row-lines": true,
+  "minimal-style@@col-lines": true,
+  "minimal-style@@tag-border-width": "2px",
+  "minimal-style@@tag-radius": "4px",
+  "minimal-style@@trim-cols": true,
+  "minimal-style@@minimal-code-scroll": false,
+  "minimal-style@@pdf-invert-dark": false,
+  "minimal-style@@pdf-blend-light": false,
+  "minimal-style@@pdf-dark-opacity": 1
+}

@@ -1,0 +1,14 @@
+{
+  "accentColor": "#ece0d1",
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "baseFontSize": 15,
+  "interfaceFontFamily": "Cascadia Mono",
+  "textFontFamily": "Cascadia Mono",
+  "monospaceFontFamily": "Source Code Pro",
+  "enabledCssSnippets": [
+    "callouts",
+    "smooth_caret",
+    "notebook-theme"
+  ]
+}

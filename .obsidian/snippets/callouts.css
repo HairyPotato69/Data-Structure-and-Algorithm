@@ -1,0 +1,31 @@
+.callout[data-callout="definition"] {
+
+--callout-color: 80, 200, 120;
+
+--callout-icon: book-a;
+
+}
+
+.callout[data-callout="practice"]{
+
+--callout-color: 7, 101, 0;
+
+--callout-icon: thumbs-up;
+
+}
+
+.callout[data-callout="fyi"]{
+
+--callout-color: 2, 120, 251;
+
+--callout-icon: book-marked;
+
+}
+
+.callout[data-callout="reminder"]{
+
+--callout-color: 244, 187, 68;
+
+--callout-icon: sticky-note;
+
+}
