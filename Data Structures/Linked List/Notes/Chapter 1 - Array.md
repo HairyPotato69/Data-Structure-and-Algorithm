@@ -1,4 +1,5 @@
 # Array definition
+
 Arrays created in C++ can only hold values of the same datatype. 
 
 ```cpp
@@ -29,8 +30,11 @@ int main(){
 ```
 
 The values inside an array can be assigned through random access; the compiler does not have to traverse from location 0 to location n to access the value at n. This is also known as subscript notation, `arr[3]`
+
 ## Creating array 
+
 **The conventional way**
+
 ```cpp
 int main(){
 	int arr[5]{1,2,3,4,5};
@@ -40,7 +44,9 @@ int main(){
 	return 0;
 }
 ```
+
 **Allocating memory manually**
+
 ```cpp
 int main(){
 	int* pArr{ new int[5] };
@@ -51,7 +57,9 @@ int main(){
 	return 0;
 }
 ```
+
 # 2-Dimensional Array
+
 A 2D array is an array that stores arrays as its element. A conventional thought is to imagine it as a table. 
 
 | row/column | 0   | 1   | 2   | 3   |
@@ -67,8 +75,11 @@ According to the table above, the 2D array contains 5 rows and 4 columns.
 Assessing the values in a specific row and column requires two indices. `arr[0][1]`. The first index indicates the row while the second index indicates the column. `arr[0][1]` would return 1.
 
 If only one index is indicated, a list (*row*) will be returned. `arr[0]` will return `[1,6,9,8]`
+
 ## Creating 2D array
+
 **The conventional way**
+
 ```cpp
 int main(){
 	int 2darray[4][4]{};
@@ -79,7 +90,9 @@ int main(){
 	return 0;
 }
 ```
+
 **Allocating memory manually**
+
 ```cpp
 int main(){
 	// Allocate memory for row
@@ -99,9 +112,13 @@ int main(){
 	return 0;
 }
 ```
+
 ### Traversing 2d array effectively
+
 Traversing a matrix to find a value by check is cell one by one is ineffective as it takes $O(n^2)$ time. What if the value is at the bottom left corner? The better way would be:
+
 *Snippet*
+
 ```cpp
 bool traverseMatrix(int arr[][], int target){
 	int row{sizeof(arr)/sizeof(arr[0])};
@@ -117,13 +134,19 @@ bool traverseMatrix(int arr[][], int target){
 
 }
 ```
+
 # Reallocating array
+
 The problem with ordinary array is that it is a static array. This means that the size of the array cannot be changed after its initial setting. So, the developer is restricted to his initial thought. Nonetheless, the developer may allocated more memory for the array but, if it's not utilised completely, a lot of memory is wasted. 
 
 This begs the question, *what if the developer needs more space?*
+
 ## Solution - Creating another list
+
 One of the solution is to simply create another list and import the original list over. 
+
 *Snippet*
+
 ```cpp
 #include <iostream>
 #include <cstdlib>
@@ -149,4 +172,5 @@ int main(){
 	return 0;
 }
 ```
+
 If the list is small, this is a viable way of reallocating memory. However, if the list gets too big, this method is slow and memory-inefficient. This issue can be solved with dynamic array such as `std::vector` or [linked list](Chapter%202%20-%20Linked%20List.md)

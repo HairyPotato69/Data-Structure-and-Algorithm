@@ -1,13 +1,16 @@
-# Linked List definition
+# Linked List NOTE
 Linked list allows values to be connected to one another without being contiguous - values can exist in different location in the memory grid. 
+
 ![Memory grid](../Diagram/Normal%20linked%20list/Memory%20grid.png)
 
-Generally, linked list are presented as such, \
+Generally, linked list are presented as such,
+
 ![Linked List](../Diagram/Normal%20linked%20list/Linked%20list.png)
 
 A linked list will have a head pointer that points to the first value in the linked list. A tail pointer that points to the final value in the linked list *may* be included. 
 
 ## Creation
+
 The elements in a linked list is referred to as **Nodes**.
 
 ```cpp
@@ -26,6 +29,7 @@ Node::Node(int value, Node* next = nullptr)
 ```
 
 ![Node](../Diagram/Normal%20linked%20list/Node.png)
+
 Nodes should have a home to live in before any operations can be done. A home (*linked list*) can be created as shown.
 
 ```cpp
@@ -68,6 +72,7 @@ class LinkedList{
 	- This function changes the value of a node at an index
 
 # Operations
+
 ## `LinkedList()`
 
 >[!NOTE]
@@ -114,6 +119,7 @@ int LinkedList::get_size() const{
 ![Insertion](../Diagram/Normal%20linked%20list/insertion.png)
 
 *Snippet A*
+
 ```cpp
 bool LinkedList::insert(int index, const int value){
 	if(index <= 0 || index > size) return 0;
@@ -139,7 +145,7 @@ bool LinkedList::insert(int index, const int value){
 
 ## `bool value_at(const int index, int& value)`
 
->[!DEFINITION]
+>[!NOTE]
 >Finds and returns the value of the node at a specific location.
 
 ```cpp
@@ -152,12 +158,13 @@ bool LinkedList::value_at(const int index, int& value) const{
 
 ## `bool remove(int index)`
 
->[!DEFINITION]
+>[!NOTE]
 >Finds and removes a node at a specific location
 
 ![Deletion](../Diagram/Normal%20linked%20list/deletion.png)
 
 *Snippet B*
+
 ```cpp
 bool remove::LinkedList(int index){
 	if(index <= 0 || index > size || !head) return 0;
@@ -184,7 +191,7 @@ bool remove::LinkedList(int index){
 
 ## `bool set(const int index, const int value)`
 
->[!DEFINITION]
+>[!NOTE]
 >Finds and changes the value of a node at a specific location
 
 ```cpp
@@ -208,10 +215,12 @@ There are different types of linked list:
 # Techniques related to [Chapter 1 - Array](../Notes/Chapter%201%20-%20Array.md) and [Chapter 2 - Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
 
 ## Two pointer technique
+
 Most problem regarding array and linked list can be solved using two pointers in same or different locations. 
 One of the **must-know** algorithm in linked list is the **Hare and Tortoise Algorithm**.
 
 ### Hare and Tortoise Algorithm
+
 ![Hare and Tortoise](../Diagram/Normal%20linked%20list/Hare%20and%20Tortoise.png)
 
 **How does it work?**
@@ -220,6 +229,7 @@ Imagine two runners on a looping track where there is a faster runner ahead of t
 *Snippet C*: Basic Algorithm
 
 **Time complexity: $O(n)$**
+
 ```cpp
 bool HareandTortoise(Node* head){
 	if(!head) return 0;
@@ -238,6 +248,7 @@ bool HareandTortoise(Node* head){
 *Snippet D*: Starting point of the cycle
 
 **Time complexity: $O(n)$**
+
 ```cpp
 Node* HareandTortoise(Node* head){
 	if(!head) return 0;
@@ -260,4 +271,5 @@ Node* HareandTortoise(Node* head){
 }
 ```
 # See next
+
 [Chapter 3 - Queue and Stack](../Notes/Chapter%203%20-%20Queue%20and%20Stack.md)
