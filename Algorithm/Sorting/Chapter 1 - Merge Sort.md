@@ -1,35 +1,30 @@
----
-aliases:
-  - Merge Sort
-tags:
-  - Notes
-  - DSA
-  - Merge-Sort
-  - Binary-Search-Tree
-Date Completed: 2023-09-18
-Completion: true
-obsidianUIMode:
----
->[!WARNING] See this first
->[[]] *Recursion*
+>[!WARNING]
+>[Recursion](../Recursion/Notes/Recursion.md)
+
 # Definition
 
->[!DEFINITION] Merge Sort
+>[!NOTE]
 >It is a sorting algorithm that follows the **divide-and-conquer** approach.
 
-It works by [[|recursively]] halving the input array into smaller subarrays and sorting those subarrays into ascending or descending order and then merging those subarrays together. 
+It works by **recursively** halving the input array into smaller subarrays and sorting those subarrays into ascending or descending order and then merging those subarrays together. 
 
 **How does it work**
+
 1. **Divide**
 	1. It divides the list recursively by halves until it can no longer be divided.
 2. **Conquer**
 	1. It sorts the divided subarrays into ascending and descending order.
 3. **Merge**
 	1. The sorted subarrays are merged back together until a full and complete array is produced.
+
 # Demonstration
+
 ## Top-down Approach
-![[Top-Down Approach|750]]
+
+![Top-Down Approach](../Sorting/Diagrams/Top-Down%20Approach.png)
+
 **Pseudocode**
+
 ```python
 algorithm TopDownApproach(S): # S is the array
 # Input: array, S
@@ -40,9 +35,13 @@ algorithm TopDownApproach(S): # S is the array
 		call TopDownApproach(second_half)
 		merge both halfs into a single arra
 ```
+
 ## Bottom-Up Apporoach
-![[Bottom-Up Approach|750]]
+
+![Bottom-Up Approach](../Sorting/Diagrams/Bottom-Up%20Approach.png)
+
 **Pseudocode**
+
 ```python
 algorithm BottomUpApproach(S, n): # S is the array
 # Input: array, S
@@ -60,9 +59,13 @@ algorithm BottomUpApproach(S, n): # S is the array
 			index2 = index2 + index * 2
 		index = index * 2
 ```
+
 # Coding Snippet
+
 ## Top Down Approach
+
 *Snippet A: MergeSort*
+
 ```cpp
 // left = 0, right = size - 1
 void mergeSort(int array[], int const left, int const right){ 
@@ -75,7 +78,9 @@ void mergeSort(int array[], int const left, int const right){
 	merge(array, left, mid, right);
 }
 ```
+
 *Snippet B: Merge*
+
 ```cpp
 void merge(int array[], int const left, int const mid,
 		  int const right)
@@ -131,7 +136,9 @@ void merge(int array[], int const left, int const mid,
 	delete[] rightArray;
 }
 ```
+
 *Snippet C: Driver code*
+
 ```cpp
 int main(){
 	int arr[6]{12,11,13,5,6,7};
@@ -150,28 +157,41 @@ int main(){
 	
 }
 ```
+
 # Complexity analysis
+
 ## Time complexity
+
 **Best Case**: $O(n\;log\;n)$; when the array is almost sorted
+
 **Average Case**: $O(n\;log\;n)$; when the array is randomly ordered
+
 **Worst Case**: $O(n\;log\;n)$; when the array is not sorted at all or sorted in reverse order.
+
 ## Space complexity
+
 $O(n)$. Additional space is needed to store the temporary arrays used during merging
 
 # Advantages and Disadvantages
+
 ## Advantages
+
 1. Stability
 	- The relative order of equal elements are maintained in the input array
 2. Guaranteed performance
 	- The Big-O notation of each cases is the same.
 3. Simple to implement
 	- The approach is straightforward.
+
 ## Disadvantages
+
 1. Space complexity
 	- Requires additional space to store the temporary subarrays
 2. Time complexity
 	- Since the time complexity is the same regardless of array size and condition of the array, it is not effective on smaller arrays.
+
 # Application
+
 1. Sorting large datasets
 2. External sorting
 3. Inversion conuting

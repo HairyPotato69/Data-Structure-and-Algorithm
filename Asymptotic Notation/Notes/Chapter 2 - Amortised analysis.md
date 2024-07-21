@@ -1,5 +1,5 @@
 # Part 1
->[!INFO]
+>[!NOTE]
 > Amortisation is the process of spreading the repayment of a loan, or the cost of an intangible asset, over a specific timeframe
 
 # Example no.1: Opening a Donut Franchise
