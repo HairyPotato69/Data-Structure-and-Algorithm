@@ -1,17 +1,3 @@
----
-aliases:
-  - Linked List
-tags:
-  - Notes
-  - Linked-List
-  - DSA
-Date Completed: 2024-05-24
-Completion: true
-obsidianUIMode: preview
----
->[!WARNING] See pointers first
->[[Pointer]]
-
 # Linked List definition
 Linked list allows values to be connected to one another without being contiguous - values can exist in different location in the memory grid. 
 ![[Memory grid]]
@@ -20,6 +6,7 @@ Generally, linked list are presented as such,
 A linked list will have a head pointer that points to the first value in the linked list. A tail pointer that points to the final value in the linked list *may* be included. 
 ## Creation
 The elements in a linked list is referred to as **Nodes**.
+
 ```cpp
 class Node{
 	private:
@@ -35,10 +22,9 @@ Node::Node(int value, Node* next = nullptr)
 	{}
 ```
 
-^0a18b7
-
-![[Data Structure and Algorithm/Data Structures/Linked List/Diagram/Normal linked list/Node]]
+![Node](../Diagram/Normal%20linked%20list/Node.png)
 Nodes should have a home to live in before any operations can be done. A home (*linked list*) can be created as shown.
+
 ```cpp
 class LinkedList{
 	private:
@@ -55,6 +41,7 @@ class LinkedList{
 		bool set(const int index, const int value);
 };
 ```
+
 *Explanation*
 1. `Node* head{}`
 	- The head is the pointer that points to the first node of the linked list
@@ -76,10 +63,11 @@ class LinkedList{
 	- This function remove a node at a specific index
 8. `bool set(const int index, const int value)`
 	- This function changes the value of a node at an index
+
 # Operations
 ## `LinkedList()`
 
->[!Definition] Default constructor
+>[!NOTE]
 > Default constructor is a constructor that is called automatically when no other constructor is used.
 
 ```cpp
@@ -91,7 +79,7 @@ LinkedList::LinkedList(Node* head, Node* tail = nullptr)
 
 ## `Node* find(const int index)`
 
->[!DEFINITION] Function
+>[!NOTE]
 >Finds and returns a node at a specific location.
 
 ```cpp
@@ -106,7 +94,7 @@ Node* LinkedList::find(const int index) const{
 
 ## `int get_size()`
 
->[!DEFINITION] Function
+>[!NOTE]
 >Returns the number of nodes in the linked list.
 
 ```cpp
@@ -117,11 +105,12 @@ int LinkedList::get_size() const{
 
 ## `bool LinkedList::insert(int index, const int value)`
 
->[!DEFINITION] Function
+>[!NOTE]
 >Insert node at the front, end or anywhere in-between.
 
-![[insertion|1000]]
-*Snippet*
+![Insertion](../Diagram/Normal%20linked%20list/insertion.png)
+
+*Snippet A*
 ```cpp
 bool LinkedList::insert(int index, const int value){
 	if(index <= 0 || index > size) return 0;
@@ -147,7 +136,7 @@ bool LinkedList::insert(int index, const int value){
 
 ## `bool value_at(const int index, int& value)`
 
->[!DEFINITION] Function
+>[!DEFINITION]
 >Finds and returns the value of the node at a specific location.
 
 ```cpp
@@ -160,11 +149,12 @@ bool LinkedList::value_at(const int index, int& value) const{
 
 ## `bool remove(int index)`
 
->[!DEFINITION] Function
+>[!DEFINITION]
 >Finds and removes a node at a specific location
 
-![[deletion|1000]]
-*Snippet*
+![Deletion](../Diagram/Normal%20linked%20list/deletion.png)
+
+*Snippet B*
 ```cpp
 bool remove::LinkedList(int index){
 	if(index <= 0 || index > size || !head) return 0;
@@ -191,9 +181,8 @@ bool remove::LinkedList(int index){
 
 ## `bool set(const int index, const int value)`
 
->[!DEFINITION] Function
+>[!DEFINITION]
 >Finds and changes the value of a node at a specific location
-
 
 ```cpp
 bool LinkedList::set(const int index, const int value){
@@ -205,22 +194,28 @@ bool LinkedList::set(const int index, const int value){
 ```
 
 # Variations
+
 There are different types of linked list:
 1. [[Chapter 3 - Queue and Stack|Queue]]
 2. [[Chapter 3 - Queue and Stack|Stack]]
 3. Doubly linked list
 	- Largely similar with singly linked list.
 2. Circular linked list (both singly and doubly)
-# Techniques related to [[Chapter 1 - Array]] and [[Chapter 2 - Linked List]]
+
+# Techniques related to [Chapter 1 - Array](../Notes/Chapter%201%20-%20Array.md) and [Chapter 2 - Linked List](../Notes/Chapter%202%20-%20Linked%20List.md)
+
 ## Two pointer technique
 Most problem regarding array and linked list can be solved using two pointers in same or different locations. 
 One of the **must-know** algorithm in linked list is the **Hare and Tortoise Algorithm**.
+
 ### Hare and Tortoise Algorithm
-![[Hare and Tortoise]]
+![Hare and Tortoise](../Diagram/Normal%20linked%20list/Hare%20and%20Tortoise.png)
+
 **How does it work?**
 Imagine two runners on a looping track where there is a faster runner ahead of the slower runner. Since it is a loop, the faster runner will, at some point, intersect the slower runner. By applying the same logic we can determine if a linked list is a cyclic linked list. 
 
-*Snippet*: Basic Algorithm
+*Snippet C*: Basic Algorithm
+
 **Time complexity: $O(n)$**
 ```cpp
 bool HareandTortoise(Node* head){
@@ -236,7 +231,9 @@ bool HareandTortoise(Node* head){
 	return 0;
 }
 ```
-*Snippet*: Starting point of the cycle
+
+*Snippet D*: Starting point of the cycle
+
 **Time complexity: $O(n)$**
 ```cpp
 Node* HareandTortoise(Node* head){
@@ -260,4 +257,4 @@ Node* HareandTortoise(Node* head){
 }
 ```
 # See next
-[[Chapter 3 - Queue and Stack]]
+[Chapter 3 - Queue and Stack](../Notes/Chapter%203%20-%20Queue%20and%20Stack.md)
